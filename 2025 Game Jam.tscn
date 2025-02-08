@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://cy88u6fsju4tf"]
+[gd_scene load_steps=4 format=3 uid="uid://cy88u6fsju4tf"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_momw6"]
+[ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="2_x3dip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to1hj"]
+size = Vector2(32, 32)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_momw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_x3dip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_to1hj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
