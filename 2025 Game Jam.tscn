@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://cy88u6fsju4tf"]
+[gd_scene load_steps=12 format=4 uid="uid://cy88u6fsju4tf"]
 
 [ext_resource type="Texture2D" uid="uid://dl27lqbm6ey2y" path="res://Sprites/tilemap.png" id="1_ib6l2"]
 [ext_resource type="Script" path="res://Player.gd" id="1_momw6"]
 [ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="2_x3dip"]
 [ext_resource type="Script" path="res://Components/Health.gd" id="4_kywmf"]
+[ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="5_tpqut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnhsk"]
 texture = ExtResource("1_ib6l2")
@@ -162,6 +163,9 @@ fill_to = Vector2(1, 0.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to1hj"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycecv"]
+size = Vector2(23, 24)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -194,3 +198,17 @@ zoom = Vector2(3, 3)
 script = ExtResource("4_kywmf")
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(-57, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_ycecv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(0.450625, 0.428147)
+texture = ExtResource("5_tpqut")
+
+[node name="Node2D" type="Node2D" parent="Enemy/Sprite2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemy/Sprite2D/Node2D"]
+scale = Vector2(1, 1)
