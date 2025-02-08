@@ -163,6 +163,12 @@ script = ExtResource("1_momw6")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_x3dip")
 
+[node name="CastShadow" type="Node2D" parent="CharacterBody2D/Sprite2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D/Sprite2D/CastShadow"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Sprite2D/CastShadow"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_to1hj")
 
