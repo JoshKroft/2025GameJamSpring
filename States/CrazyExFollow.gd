@@ -16,5 +16,5 @@ func Physics_Update(delta: float):
 	else:
 		CrazyEx.velocity = Vector2() 
 
-	if direction.length() > 100:
+	if direction.length() > 50:
 		Transitioned.emit(self, "idle")
