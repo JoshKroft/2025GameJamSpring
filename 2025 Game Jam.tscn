@@ -1,29 +1,13 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=12 format=4 uid="uid://cy88u6fsju4tf"]
-=======
-[gd_scene load_steps=10 format=4 uid="uid://cy88u6fsju4tf"]
->>>>>>> Stashed changes
-=======
-[gd_scene load_steps=10 format=4 uid="uid://cy88u6fsju4tf"]
->>>>>>> Stashed changes
+[gd_scene load_steps=12 format=4 uid="uid://ea7n4plf22v7"]
 
-[ext_resource type="Texture2D" uid="uid://dl27lqbm6ey2y" path="res://Sprites/tilemap.png" id="1_ib6l2"]
-[ext_resource type="Script" path="res://Player.gd" id="1_momw6"]
-[ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="2_x3dip"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[ext_resource type="Script" path="res://Components/Health.gd" id="4_kywmf"]
-[ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="5_tpqut"]
-=======
-[ext_resource type="Script" path="res://cast_shadow/cast_shadow.gd" id="4_ddyoq"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="Script" path="res://cast_shadow/cast_shadow.gd" id="4_ddyoq"]
->>>>>>> Stashed changes
+[ext_resource type="Texture2D" uid="uid://dl27lqbm6ey2y" path="res://Sprites/tilemap.png" id="1_e66he"]
+[ext_resource type="Script" path="res://Player.gd" id="2_oej58"]
+[ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="3_fj4px"]
+[ext_resource type="Script" path="res://Components/Health.gd" id="4_5laby"]
+[ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="5_dk6o0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnhsk"]
-texture = ExtResource("1_ib6l2")
+texture = ExtResource("1_e66he")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -189,20 +173,12 @@ tile_map_data = PackedByteArray("AAD7//3/AAAAAAQAAAD8//3/AAAAAAQAAAD9//3/AAAAAAQ
 tile_set = SubResource("TileSet_uoijd")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_momw6")
+script = ExtResource("2_oej58")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_x3dip")
+texture = ExtResource("3_fj4px")
 
-<<<<<<< Updated upstream
 [node name="CastShadow" type="Node2D" parent="Player/Sprite2D"]
-=======
-[node name="CastShadow" type="Node2D" parent="CharacterBody2D/Sprite2D"]
-script = ExtResource("4_ddyoq")
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 [node name="RayCast2D" type="RayCast2D" parent="Player/Sprite2D/CastShadow"]
 
@@ -219,7 +195,7 @@ shape = SubResource("RectangleShape2D_to1hj")
 zoom = Vector2(3, 3)
 
 [node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("4_kywmf")
+script = ExtResource("4_5laby")
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(-57, -1)
@@ -230,7 +206,7 @@ shape = SubResource("RectangleShape2D_ycecv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 scale = Vector2(0.450625, 0.428147)
-texture = ExtResource("5_tpqut")
+texture = ExtResource("5_dk6o0")
 
 [node name="Node2D" type="Node2D" parent="Enemy/Sprite2D"]
 
