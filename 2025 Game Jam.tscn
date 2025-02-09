@@ -211,4 +211,3 @@ texture = ExtResource("5_tpqut")
 [node name="Node2D" type="Node2D" parent="Enemy/Sprite2D"]
 
 [node name="RayCast2D" type="RayCast2D" parent="Enemy/Sprite2D/Node2D"]
-scale = Vector2(1, 1)
