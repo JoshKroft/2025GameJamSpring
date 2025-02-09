@@ -165,7 +165,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to1hj"]
-size = Vector2(32, 32)
+size = Vector2(16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfhh8"]
 size = Vector2(32, 32)
@@ -185,6 +185,7 @@ script = ExtResource("1_momw6")
 texture = ExtResource("2_x3dip")
 
 [node name="CastShadow" type="Node2D" parent="Player/Player"]
+visible = false
 script = ExtResource("4_ddyoq")
 
 [node name="RayCast2D" type="RayCast2D" parent="Player/Player/CastShadow"]
@@ -196,6 +197,7 @@ scale = Vector2(0.5, 0.125)
 texture = SubResource("GradientTexture2D_d570i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_to1hj")
 
 [node name="Camera2D" type="Camera2D" parent="."]

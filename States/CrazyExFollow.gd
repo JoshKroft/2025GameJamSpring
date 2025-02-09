@@ -2,7 +2,7 @@ extends State
 class_name CrazyExFollow
 
 @export var CrazyEx : CharacterBody2D
-@export var move_speed := 40.0
+@export var move_speed := 100.0
 var player : CharacterBody2D
 
 func Enter():
@@ -16,5 +16,5 @@ func Physics_Update(delta: float):
 	else:
 		CrazyEx.velocity = Vector2() 
 
-	if direction.length() > 50:
+	if direction.length() > 100:
 		Transitioned.emit(self, "idle")
