@@ -1,10 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=4 uid="uid://cy88u6fsju4tf"]
+=======
+[gd_scene load_steps=10 format=4 uid="uid://cy88u6fsju4tf"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dl27lqbm6ey2y" path="res://Sprites/tilemap.png" id="1_ib6l2"]
 [ext_resource type="Script" path="res://Player.gd" id="1_momw6"]
 [ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="2_x3dip"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Components/Health.gd" id="4_kywmf"]
 [ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="5_tpqut"]
+=======
+[ext_resource type="Script" path="res://cast_shadow/cast_shadow.gd" id="4_ddyoq"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnhsk"]
 texture = ExtResource("1_ib6l2")
@@ -178,7 +186,12 @@ script = ExtResource("1_momw6")
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_x3dip")
 
+<<<<<<< Updated upstream
 [node name="CastShadow" type="Node2D" parent="Player/Sprite2D"]
+=======
+[node name="CastShadow" type="Node2D" parent="CharacterBody2D/Sprite2D"]
+script = ExtResource("4_ddyoq")
+>>>>>>> Stashed changes
 
 [node name="RayCast2D" type="RayCast2D" parent="Player/Sprite2D/CastShadow"]
 
