@@ -178,7 +178,7 @@ tile_map_data = PackedByteArray("AAD7//3/AAAAAAQAAAD8//3/AAAAAAQAAAD9//3/AAAAAAQ
 tile_set = SubResource("TileSet_uoijd")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-165, 6)
+position = Vector2(-71, -3)
 script = ExtResource("1_momw6")
 
 [node name="Player" type="Sprite2D" parent="Player"]
@@ -199,9 +199,9 @@ texture = SubResource("GradientTexture2D_d570i")
 shape = SubResource("RectangleShape2D_to1hj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 
-[node name="CrazyEx" type="CharacterBody2D" parent="." groups=["Player"]]
+[node name="CrazyEx" type="CharacterBody2D" parent="."]
 script = ExtResource("5_2dkol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrazyEx"]
@@ -217,7 +217,7 @@ texture = ExtResource("6_703m6")
 
 [node name="State Machine" type="Node" parent="CrazyEx" node_paths=PackedStringArray("initial_state") groups=["Player"]]
 script = ExtResource("7_xksju")
-initial_state = NodePath("Follow")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="CrazyEx/State Machine" node_paths=PackedStringArray("CrazyEx")]
 script = ExtResource("8_emfk2")
@@ -228,3 +228,4 @@ script = ExtResource("9_cykmc")
 CrazyEx = NodePath("../..")
 
 [connection signal="timeout" from="CrazyEx/Timer" to="CrazyEx" method="_on_timer_timeout"]
+[connection signal="Transitioned" from="CrazyEx/State Machine/Follow" to="CrazyEx/State Machine/Follow" method="_on_transitioned"]

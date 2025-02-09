@@ -4,6 +4,8 @@ class_name CrazyExIdle
 @export var CrazyEx : CharacterBody2D
 @export var move_speed : float = 10.0
 
+var player: CharacterBody2D
+
 var move_direction : Vector2
 var wander_time : float
 
@@ -12,6 +14,7 @@ func randomize_wander():
 	wander_time = randf_range(1, 3)
 	
 func Enter():
+	player = get_tree().get_first_node_in_group("Player")
 	randomize_wander()
 	
 func Update(delta: float):
@@ -24,4 +27,7 @@ func Update(delta: float):
 func Physics_Update(delta: float):
 	if CrazyEx:
 		CrazyEx.velocity = move_direction * move_speed
+		
+	var direction = player.global_position - CrazyEx.global_position
+
 	

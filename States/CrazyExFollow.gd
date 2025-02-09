@@ -18,4 +18,3 @@ func Physics_Update(delta: float):
 
 	if direction.length() > 50:
 		Transitioned.emit(self, "idle")
-	
