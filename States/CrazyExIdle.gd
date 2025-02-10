@@ -30,5 +30,5 @@ func Physics_Update(delta: float):
 		
 	var direction = player.global_position - CrazyEx.global_position
 
-	if direction.length() < 100:
+	if direction.length() < 500:
 		Transitioned.emit(self, "follow")
