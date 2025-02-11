@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2025 Game Jam"
-run/main_scene="res://2025 Game Jam.tscn"
+run/main_scene="res://2025 Game Jam WIP.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
