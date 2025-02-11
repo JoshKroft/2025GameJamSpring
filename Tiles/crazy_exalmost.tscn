@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://iilp443vxmhg"]
+[gd_scene load_steps=4 format=3 uid="uid://iilp443vxmhg"]
 
 [ext_resource type="Script" path="res://CrazyEx.gd" id="1_uqwwj"]
 [ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="2_wpuuu"]
-[ext_resource type="Script" path="res://States/State Machine.gd" id="3_hmi5n"]
-[ext_resource type="Script" path="res://States/CrazyExIdle.gd" id="4_n6ypw"]
-[ext_resource type="Script" path="res://States/CrazyExFollow.gd" id="5_hw3s7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n12j"]
 radius = 8.24621
@@ -27,20 +24,7 @@ autostart = true
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_wpuuu")
 
-[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state") groups=["Player"]]
-script = ExtResource("3_hmi5n")
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("CrazyEx")]
-script = ExtResource("4_n6ypw")
-CrazyEx = NodePath("../..")
-
-[node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("CrazyEx")]
-script = ExtResource("5_hw3s7")
-CrazyEx = NodePath("../..")
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["Player"]]
 debug_enabled = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="Transitioned" from="State Machine/Follow" to="State Machine/Follow" method="_on_transitioned"]

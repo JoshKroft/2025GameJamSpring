@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name CrazyEx
 
-const speed = 50
+const speed = 75
 @export var player: CharacterBody2D
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D

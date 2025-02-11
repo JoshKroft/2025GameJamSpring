@@ -347,3 +347,6 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="CrazyEx2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_mlgw5")]
 player = NodePath("../Player")
+
+[node name="CrazyEx" parent="." instance=ExtResource("5_mlgw5")]
+position = Vector2(-219, -12)
