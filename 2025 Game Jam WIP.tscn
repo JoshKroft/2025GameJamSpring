@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://ea7n4plf22v7"]
+[gd_scene load_steps=11 format=4 uid="uid://ea7n4plf22v7"]
 
 [ext_resource type="Texture2D" uid="uid://dl27lqbm6ey2y" path="res://Sprites/tilemap.png" id="1_owhol"]
-[ext_resource type="Script" path="res://Player.gd" id="2_byo28"]
 [ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="3_6gj5t"]
 [ext_resource type="Script" path="res://Components/Health.gd" id="4_ogm0o"]
 [ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="5_b4adm"]
@@ -173,7 +172,6 @@ tile_map_data = PackedByteArray("AAD7//3/AAAAAAQAAAD8//3/AAAAAAQAAAD9//3/AAAAAAQ
 tile_set = SubResource("TileSet_uoijd")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("2_byo28")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("3_6gj5t")
