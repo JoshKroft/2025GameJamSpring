@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://1u7cg8s0b2c7"]
+
+[ext_resource type="FontFile" uid="uid://cn8dl3hry66n0" path="res://Fonts/NIGHTCORE DEMO.TTF" id="1_7pe0s"]
+[ext_resource type="Script" path="res://Menus/GameOverScreen.gd" id="1_bjl6i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unn0m"]
+bg_color = Color(0.311286, 0.152061, 0.170154, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0338533, 0.0338533, 0.0338532, 1)
+shadow_color = Color(0.154876, 0.154876, 0.154876, 0.6)
+shadow_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_qybro"]
+font = ExtResource("1_7pe0s")
+font_size = 110
+font_color = Color(0.83, 0.0138333, 0, 1)
+
+[node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource("1_bjl6i")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unn0m")
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/Rows"]
+layout_mode = 2
+text = "Game   Over!!"
+label_settings = SubResource("LabelSettings_qybro")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/Rows"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/Rows/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/Rows/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7pe0s")
+theme_override_font_sizes/font_size = 50
+text = "   RESTART   "
+
+[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/Rows/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7pe0s")
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/Rows/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/Rows/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

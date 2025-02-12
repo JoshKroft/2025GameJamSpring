@@ -49,3 +49,9 @@ func update_heart_display():
 	
 func game_over():
 	get_tree().reload_current_scene()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://Menus/WinMenu.tscn")
+	
