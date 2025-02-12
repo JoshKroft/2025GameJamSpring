@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr4ymvyoukyse"]
+
+[ext_resource type="Script" path="res://Character Scripts/Player.gd" id="1_slmjs"]
+[ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="2_dlvhb"]
+[ext_resource type="Script" path="res://cast_shadow/cast_shadow.gd" id="3_mtw6v"]
+[ext_resource type="Texture2D" uid="uid://dqecrvy68ea4t" path="res://Sprites/heart.png" id="4_yir54"]
+
+[sub_resource type="Gradient" id="Gradient_pefn0"]
+offsets = PackedFloat32Array(0.512987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d570i"]
+gradient = SubResource("Gradient_pefn0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klvk6"]
+radius = 12.0416
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(-71, -3)
+script = ExtResource("1_slmjs")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_dlvhb")
+
+[node name="CastShadow" type="Node2D" parent="Sprite"]
+visible = false
+script = ExtResource("3_mtw6v")
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite/CastShadow"]
+
+[node name="Shadow" type="Sprite2D" parent="Sprite/CastShadow"]
+modulate = Color(0.230315, 0.230315, 0.230315, 1)
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.125)
+texture = SubResource("GradientTexture2D_d570i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_klvk6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(71, 3)
+zoom = Vector2(2.5, 2.5)
+
+[node name="health_bar" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar"]
+offset_left = 65.0
+offset_top = 54.0
+offset_right = 247.0
+offset_bottom = 94.0
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(69.045, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart"]
+texture = ExtResource("4_yir54")
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(71.61, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart2"]
+texture = ExtResource("4_yir54")
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(34.93, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart3"]
+texture = ExtResource("4_yir54")
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_player_timer_timeout"]
