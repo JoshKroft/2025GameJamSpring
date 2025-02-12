@@ -4,6 +4,7 @@ class_name Player
 @export var move_speed : float = 100
 var hearts_list : Array[TextureRect]
 var health = 3
+var can_take_damage = true
 var alive : bool = true
 
 func _ready() -> void:
@@ -23,20 +24,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func take_damage():
-	if health > 0:
-		if $InvulnerabilityTimer.is_stopped():
-			modulate.a = 0.5
-			health -= 1
-			$InvulnerabilityTimer.start();
-			update_heart_display()
+	if $InvulnerabilityTimer.is_stopped():	
+		if health > 0:
+			if can_take_damage == true:
+				modulate.a = 0.5
+				health -= 1
+				$InvulnerabilityTimer.start();
+				can_take_damage = false
+				update_heart_display()
 			
 		
 func _on_player_timer_timeout() -> void:
 	modulate.a = 1
+	can_take_damage = true
+	
 
 func update_heart_display():
 	for i in range(hearts_list.size()):
-		hearts_list[i].visible = 1 < health
+		hearts_list[i].visible = 0.5 < health
 		
 	# player dead
 	if health <= 0:
