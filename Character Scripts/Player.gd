@@ -41,14 +41,16 @@ func _on_player_timer_timeout() -> void:
 
 func update_heart_display():
 	for i in range(hearts_list.size()):
-		hearts_list[i].visible = 1 < health
+		hearts_list[i].visible = i < health
 		
 	# player dead
 	if health <= 0:
 		alive = false
+		game_over()
 	
 func game_over():
-	get_tree().reload_current_scene()
+	if alive == false:
+		get_tree().change_scene_to_file("res://Menus/GameOverScreen.tscn")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

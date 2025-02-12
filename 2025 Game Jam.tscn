@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://8e0jnc45w62m"]
 
 [ext_resource type="Texture2D" uid="uid://dhhppoh4iiilj" path="res://Tiles/hedgetilebetter.png" id="1_huyij"]
-[ext_resource type="PackedScene" path="res://Player.tscn" id="2_5d84p"]
+[ext_resource type="PackedScene" uid="uid://ddfbjh4o3el07" path="res://Player.tscn" id="2_5d84p"]
 [ext_resource type="PackedScene" uid="uid://iilp443vxmhg" path="res://Tiles/crazy_exalmost.tscn" id="5_mlgw5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_21kby"]
