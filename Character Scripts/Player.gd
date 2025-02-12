@@ -41,7 +41,7 @@ func _on_player_timer_timeout() -> void:
 
 func update_heart_display():
 	for i in range(hearts_list.size()):
-		hearts_list[i].visible = 0.5 < health
+		hearts_list[i].visible = 1 < health
 		
 	# player dead
 	if health <= 0:
