@@ -88,7 +88,6 @@ libraries = {
 }
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["Player"]]
-debug_enabled = true
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["Player"]]
 

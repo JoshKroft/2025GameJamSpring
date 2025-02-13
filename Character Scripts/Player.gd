@@ -11,8 +11,8 @@ var alive : bool = true
 
 func _ready() -> void:
 	var hearts_parent = $health_bar/HBoxContainer
-	for child in hearts_parent.get_children():
-		hearts_list.append(child)
+	for i in hearts_parent.get_children():
+		hearts_list.append(i)
 	print(hearts_list)
 
 func _physics_process(delta: float) -> void:
