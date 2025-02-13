@@ -13,6 +13,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
+<<<<<<< HEAD
 <<<<<<< HEAD:CrazyEx.gd
 =======
 	
@@ -27,6 +28,8 @@ func _physics_process(_delta: float) -> void:
 		
 	
 >>>>>>> parent of 7bf95f0 (AlrightImDone):Character Scripts/CrazyEx.gd
+=======
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 	move_and_slide()
 
 func makepath() -> void:

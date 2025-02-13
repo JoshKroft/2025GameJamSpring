@@ -17,15 +17,21 @@ config/icon="res://icon.svg"
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of e3204d9 (NowIAmDone)
 =======
 >>>>>>> parent of e3204d9 (NowIAmDone)
+=======
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 [input]
 
 right={
