@@ -13,6 +13,20 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
+<<<<<<< HEAD:CrazyEx.gd
+=======
+	
+	if velocity == Vector2.ZERO:
+		animation.play("Idle")
+	elif velocity.x < 0:
+		$Sprite.flip_h = true
+		animation.play("Walk")
+	else:
+		$Sprite.flip_h = false
+		animation.play("Walk")
+		
+	
+>>>>>>> parent of 7bf95f0 (AlrightImDone):Character Scripts/CrazyEx.gd
 	move_and_slide()
 
 func makepath() -> void:

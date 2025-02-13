@@ -65,6 +65,7 @@ _data = {
 offsets = PackedFloat32Array(0.512987, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
+<<<<<<< HEAD
 =======
 [sub_resource type="Gradient" id="Gradient_pefn0"]
 offsets = PackedFloat32Array(0.512987, 1)
@@ -81,6 +82,8 @@ fill_to = Vector2(1, 0.5)
 =======
 >>>>>>> parent of 8ea9c60 (AlmostDone)
 
+=======
+>>>>>>> parent of 7bf95f0 (AlrightImDone)
 [sub_resource type="CircleShape2D" id="CircleShape2D_klvk6"]
 radius = 12.0416
 
@@ -89,7 +92,13 @@ position = Vector2(-71, -3)
 script = ExtResource("1_slmjs")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+<<<<<<< HEAD
 texture = ExtResource("2_dlvhb")
+=======
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kjq7w")
+hframes = 7
+>>>>>>> parent of 7bf95f0 (AlrightImDone)
 
 [node name="CastShadow" type="Node2D" parent="Sprite"]
 visible = false

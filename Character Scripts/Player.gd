@@ -46,9 +46,9 @@ func update_heart_display():
 	# player dead
 	if health <= 0:
 		alive = false
-		game_over()
 	
 func game_over():
+<<<<<<< HEAD
 	if alive == false:
 		get_tree().change_scene_to_file("res://Menus/GameOverScreen.tscn")
 
@@ -57,3 +57,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://Menus/WinMenu.tscn")
 	
+=======
+	get_tree().reload_current_scene()
+>>>>>>> parent of 7bf95f0 (AlrightImDone)
