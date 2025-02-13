@@ -22,8 +22,15 @@ radius = 8.24621
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_neugv"]
 resource_name = "Idle"
+=======
+[sub_resource type="Animation" id="Animation_m2nkp"]
+resource_name = "Walk"
+length = 0.55
+loop_mode = 1
+>>>>>>> parent of e3204d9 (NowIAmDone)
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,10 +38,10 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [6]
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_r3v26"]
@@ -52,10 +59,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_m2nkp"]
-resource_name = "Walk"
-length = 0.55
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_neugv"]
+resource_name = "Idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,10 +68,10 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [6]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2l428"]
@@ -108,7 +113,6 @@ autostart = true
 <<<<<<< HEAD
 <<<<<<< HEAD
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_qenmu")
 hframes = 7
 
