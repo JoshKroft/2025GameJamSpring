@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [display]
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 window/size/viewport_width=1920
@@ -28,6 +29,8 @@ window/size/viewport_height=1080
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 3ea4cf4 (end)
 window/size/mode=3
 
 [input]
