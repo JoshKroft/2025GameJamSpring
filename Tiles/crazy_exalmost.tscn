@@ -23,13 +23,19 @@ radius = 8.24621
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_neugv"]
 resource_name = "Idle"
 =======
+=======
+>>>>>>> parent of e3204d9 (NowIAmDone)
 [sub_resource type="Animation" id="Animation_m2nkp"]
 resource_name = "Walk"
 length = 0.55
 loop_mode = 1
+<<<<<<< HEAD
+>>>>>>> parent of e3204d9 (NowIAmDone)
+=======
 >>>>>>> parent of e3204d9 (NowIAmDone)
 tracks/0/type = "value"
 tracks/0/imported = false
