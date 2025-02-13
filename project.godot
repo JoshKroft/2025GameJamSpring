@@ -14,24 +14,14 @@ config/name="2025 Game Jam"
 run/main_scene="res://Menus/StartMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[display]window/size/viewport_width"=1920
+window/size/viewport_height=1080
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 8ea9c60 (AlmostDone)
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
-<<<<<<< HEAD
-=======
->>>>>>> parent of e3204d9 (NowIAmDone)
-=======
->>>>>>> parent of e3204d9 (NowIAmDone)
-=======
->>>>>>> parent of 8ea9c60 (AlmostDone)
 [input]
 
 right={
