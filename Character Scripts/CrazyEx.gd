@@ -15,7 +15,9 @@ func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	
-	if velocity.x < 0:
+	if velocity == Vector2.ZERO:
+		animation.play("Idle")
+	elif velocity.x < 0:
 		$Sprite.flip_h = true
 		animation.play("Walk")
 	else:
