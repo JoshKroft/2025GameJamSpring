@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://sxj137hyh8d3"]
+[gd_scene load_steps=14 format=4 uid="uid://sxj137hyh8d3"]
 
 [ext_resource type="Texture2D" uid="uid://dhhppoh4iiilj" path="res://Tiles/hedgetilebetter.png" id="1_huyij"]
 [ext_resource type="PackedScene" uid="uid://cr4ymvyoukyse" path="res://Player.tscn" id="2_5d84p"]
+[ext_resource type="PackedScene" uid="uid://iilp443vxmhg" path="res://Tiles/crazy_exalmost.tscn" id="3_xwfy7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_21kby"]
 vertices = PackedVector2Array(31.75, 32.2422, -32.1484, 32.2422, -31.9453, -32.6406, 32.3438, -32.6406)
@@ -304,15 +305,6 @@ tile_set = SubResource("TileSet_sbx7o")
 
 [node name="Player" parent="." instance=ExtResource("2_5d84p")]
 
-[node name="CrazyEx" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-68, -239)
-script = null
+[node name="CrazyEx" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_xwfy7")]
+position = Vector2(-71, -229)
+player = NodePath("../Player")
