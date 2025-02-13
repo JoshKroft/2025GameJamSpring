@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr4ymvyoukyse"]
+[gd_scene load_steps=8 format=3 uid="uid://ddfbjh4o3el07"]
 
 [ext_resource type="Script" path="res://Character Scripts/Player.gd" id="1_slmjs"]
-[ext_resource type="Texture2D" uid="uid://doeava5kydg5q" path="res://Sprites/spritesheet-export.png" id="2_kjq7w"]
+[ext_resource type="Texture2D" uid="uid://cv5dpm6dn16v3" path="res://Sprites/placeholder.png" id="2_dlvhb"]
+[ext_resource type="Script" path="res://cast_shadow/cast_shadow.gd" id="3_mtw6v"]
 [ext_resource type="Texture2D" uid="uid://dqecrvy68ea4t" path="res://Sprites/heart.png" id="4_yir54"]
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_fbhbw"]
 resource_name = "Idle"
 tracks/0/type = "value"
@@ -57,28 +59,46 @@ _data = {
 "RESET": SubResource("Animation_r8rwy"),
 "Walk": SubResource("Animation_5hony")
 }
+=======
+[sub_resource type="Gradient" id="Gradient_pefn0"]
+offsets = PackedFloat32Array(0.512987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqte8"]
-radius = 8.0
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d570i"]
+gradient = SubResource("Gradient_pefn0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+>>>>>>> parent of 8ea9c60 (AlmostDone)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klvk6"]
+radius = 12.0416
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(-71, -3)
 script = ExtResource("1_slmjs")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_kjq7w")
-hframes = 7
+texture = ExtResource("2_dlvhb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-libraries = {
-"": SubResource("AnimationLibrary_c5010")
-}
+[node name="CastShadow" type="Node2D" parent="Sprite"]
+visible = false
+script = ExtResource("3_mtw6v")
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite/CastShadow"]
+
+[node name="Shadow" type="Sprite2D" parent="Sprite/CastShadow"]
+modulate = Color(0.230315, 0.230315, 0.230315, 1)
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.125)
+texture = SubResource("GradientTexture2D_d570i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 15)
-shape = SubResource("CapsuleShape2D_yqte8")
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_klvk6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(2.5, 2.5)
+position = Vector2(71, 3)
 zoom = Vector2(2.5, 2.5)
 
 [node name="health_bar" type="CanvasLayer" parent="."]

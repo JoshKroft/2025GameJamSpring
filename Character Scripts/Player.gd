@@ -1,8 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-@onready var animation = $Sprite/AnimationPlayer
-
 @export var move_speed : float = 100
 var hearts_list : Array[TextureRect]
 var health = 3
@@ -20,24 +18,10 @@ func _physics_process(delta: float) -> void:
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
-	
-	if Input.is_action_pressed("left"):
-		$Sprite.flip_h = true
-		animation.play("Walk")
-	elif Input.is_action_pressed("right"):
-		$Sprite.flip_h = false
-		animation.play("Walk")
-	elif Input.is_action_pressed("up"):
-		animation.play("Walk")
-	elif Input.is_action_pressed("down"):
-		animation.play("Walk")
-	else:
-		animation.play("Idle")
-		
+
 	#input velocity 
 	velocity = input_direction * move_speed 
 	move_and_slide()
-	
 	
 func take_damage():
 	if $InvulnerabilityTimer.is_stopped():	
@@ -65,8 +49,11 @@ func update_heart_display():
 		game_over()
 	
 func game_over():
-	get_tree().change_scene_to_file("res://Menus/GameOverScreen.tscn")
+	if alive == false:
+		get_tree().change_scene_to_file("res://Menus/GameOverScreen.tscn")
 
-func _on_win_box_body_entered(body: Node2D) -> void:
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://Menus/WinMenu.tscn")
+	
