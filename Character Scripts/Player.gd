@@ -51,6 +51,9 @@ func update_heart_display():
 func game_over():
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 =======
 >>>>>>> parent of 8ea9c60 (AlmostDone)
 	if alive == false:
@@ -62,8 +65,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		get_tree().change_scene_to_file("res://Menus/WinMenu.tscn")
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	get_tree().reload_current_scene()
 >>>>>>> parent of 7bf95f0 (AlrightImDone)
+=======
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 =======
 >>>>>>> parent of 8ea9c60 (AlmostDone)
