@@ -62,6 +62,11 @@ func update_heart_display():
 	# player dead
 	if health <= 0:
 		alive = false
+		game_over()
 	
 func game_over():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Menus/GameOverScreen.tscn")
+
+func _on_win_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://Menus/WinMenu.tscn")
