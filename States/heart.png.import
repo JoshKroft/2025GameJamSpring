@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pf8xqf2ov0mp"
-path="res://.godot/imported/dudebro1-Sheet-export.png-756fdb38240c585f9881198dafe07612.ctex"
+uid="uid://du16a1nulta3s"
+path="res://.godot/imported/heart.png-618e215b0d49866b2fb9cbcb13cb9a6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/dudebro1-Sheet-export.png"
-dest_files=["res://.godot/imported/dudebro1-Sheet-export.png-756fdb38240c585f9881198dafe07612.ctex"]
+source_file="res://States/heart.png"
+dest_files=["res://.godot/imported/heart.png-618e215b0d49866b2fb9cbcb13cb9a6a.ctex"]
 
 [params]
 

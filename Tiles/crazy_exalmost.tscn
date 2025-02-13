@@ -1,11 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://iilp443vxmhg"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Character Scripts/CrazyEx.gd" id="1_psgkk"]
+=======
+[ext_resource type="Script" path="res://CrazyEx.gd" id="1_uqwwj"]
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 [ext_resource type="Texture2D" uid="uid://c3noakxwqs2nw" path="res://Sprites/Enemy.png" id="2_wpuuu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n12j"]
 radius = 8.24621
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_neugv"]
 resource_name = "Idle"
@@ -63,13 +68,19 @@ _data = {
 
 =======
 >>>>>>> parent of 7bf95f0 (AlrightImDone)
+=======
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7cf6"]
 radius = 28.0179
 
 [node name="CrazyEx" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 3
+<<<<<<< HEAD
 script = ExtResource("1_psgkk")
+=======
+script = ExtResource("1_uqwwj")
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7n12j")
@@ -78,6 +89,7 @@ shape = SubResource("CircleShape2D_7n12j")
 wait_time = 0.1
 autostart = true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -96,6 +108,14 @@ texture = ExtResource("2_wpuuu")
 >>>>>>> parent of 7bf95f0 (AlrightImDone)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["Player"]]
+=======
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wpuuu")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["Player"]]
+debug_enabled = true
+>>>>>>> parent of 8ea9c60 (AlmostDone)
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["Player"]]
 

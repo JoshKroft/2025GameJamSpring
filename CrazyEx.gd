@@ -3,7 +3,6 @@ class_name CrazyEx
 
 const speed = 75
 @export var player: CharacterBody2D
-@onready var animation = $Sprite/AnimationPlayer
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
@@ -14,17 +13,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
-	
-	if velocity == Vector2.ZERO:
-		animation.play("Idle")
-	elif velocity.x < 0:
-		$Sprite.flip_h = true
-		animation.play("Walk")
-	else:
-		$Sprite.flip_h = false
-		animation.play("Walk")
-		
-	
 	move_and_slide()
 
 func makepath() -> void:
